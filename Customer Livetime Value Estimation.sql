@@ -23,12 +23,12 @@ clv_calc AS (
     SELECT
         t.owner_id AS customer_id,
         CONCAT(u.first_name, ' ', u.last_name) AS Full_Name,
-        COALESCE(u.tenure_months, 1) AS tenure_months,  -- using coalesce to avoid zero division by replacing 0 with 1
+        COALESCE(u.tenure_months, 1) AS tenure_months,  -- i use the coalesce function to avoid zero division by replacing 0 with 1
         t.txn_count AS total_transactions,
         ROUND(
             (t.txn_count / NULLIF(u.tenure_months, 0)) * 12 * (t.total_amount / t.txn_count) * 0.001 / 100,
             2
-        ) AS estimated_clv  -- Annualized profit-based Customer Lifetime Value in naira (0.1% profit assumption)
+        ) AS estimated_clv  -- here i annualized profit-based Customer Lifetime Value in naira (0.1% profit assumption)
     FROM
 		total_txns t
     JOIN
