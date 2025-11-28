@@ -3,7 +3,7 @@ SELECT
     CONCAT(u.first_name, ' ', u.last_name) AS Full_Name,
     COUNT(DISTINCT CASE WHEN p.is_regular_savings = 1 THEN p.id END) AS savings_count,
     COUNT(DISTINCT CASE WHEN p.is_a_fund = 1 THEN p.id END) AS investment_count,
-    ROUND(SUM(s.confirmed_amount) / 100, 2) AS total_deposits  -- i convert from kobo to Naira
+    ROUND(SUM(s.confirmed_amount) / 100, 2) AS total_deposits  -- i made a convert from kobo to Naira
 FROM
 	users_customuser u
 JOIN
