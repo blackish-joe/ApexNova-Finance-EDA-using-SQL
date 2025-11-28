@@ -23,7 +23,7 @@ SELECT
     owner_id,
     type,
     DATE(last_transaction_date) AS last_transaction_date,
-    DATEDIFF(CURDATE(), last_transaction_date) AS inactivity_days  -- Calculate days since last deposit
+    DATEDIFF(CURDATE(), last_transaction_date) AS inactivity_days  -- i Calculate days since last deposit
 FROM
 	last_transactions
 WHERE last_transaction_date IS NOT NULL 
