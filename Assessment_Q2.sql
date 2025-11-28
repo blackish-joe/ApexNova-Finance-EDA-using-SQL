@@ -1,7 +1,7 @@
 WITH transaction_counts AS (
     SELECT
         owner_id,
-        DATE_FORMAT(transaction_date, '%Y-%m') AS month, -- using the function to extract year-month for monthly aggregation
+        DATE_FORMAT(transaction_date, '%Y-%m') AS month, -- i use the function to extract year-month for monthly aggregation
         COUNT(*) AS monthly_txn_count
     FROM
 		savings_savingsaccount
