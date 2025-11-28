@@ -14,26 +14,26 @@ plans_plan
 savings_savingsaccount
 withdrawals_withdrawal (not used in final queries)
 
-# Assessment_Q1.sql – High-Value Customers
+# High-Value Customers.sql
 **Approach**: 
 - Joined users, plans, and savings tables.
 - Used conditional aggregation to identify customers with both savings and investment plans.
 - Aggregated total deposits.
 
 
-# Assessment_Q2.sql – Transaction Frequency
+# Transaction Frequency.sql
 **Approach**:
 - Used CTEs to compute monthly transaction count.
 - Averaged them per customer.
 - Applied CASE logic to categorize into frequency tiers.
 
-# Assessment_Q3.sql – Inactivity Alert
+#  Inactivity Alert.sql
 **Approach**:
 - Fetched last transaction dates per plan.
 - Filtered plans inactive for over 365 days using interval comparison.
 - Covered both savings and investment plans.
 
-# Assessment_Q4.sql – Customer Livetime Value Estimation
+# Customer Livetime Value Estimation.sql
 **Approach**:
 - Calculated transaction volume and average.
 - Computed tenure from signup.
